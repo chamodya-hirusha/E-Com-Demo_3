@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Luxury Jewelry Design System - Champagne & Charcoal */
+
+@layer base {
+  :root {
+    /* Core Luxury Palette */
+    --background: 40 20% 98%; /* #FAFAF9 - Warm off-white */
+    --foreground: 24 10% 10%; /* #1C1917 - Deep charcoal */
+
+    --card: 30 20% 97%; /* #F5F5F4 - Light warm grey */
+    --card-foreground: 24 10% 10%;
+
+    --popover: 40 20% 98%;
+    --popover-foreground: 24 10% 10%;
+
+    /* Champagne Gold - Primary */
+    --primary: 49 55% 56%; /* #C5B358 - Champagne gold */
+    --primary-foreground: 24 10% 10%;
+
+    --secondary: 30 15% 94%;
+    --secondary-foreground: 24 10% 10%;
+
+    --muted: 30 15% 94%;
+    --muted-foreground: 24 5% 45%;
+
+    --accent: 49 55% 56%;
+    --accent-foreground: 24 10% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 15% 90%;
+    --input: 30 15% 90%;
+    --ring: 49 55% 56%;
+
+    --radius: 0.5rem;
+
+    /* Custom luxury tokens */
+    --gold: 49 55% 56%;
+    --gold-light: 49 60% 70%;
+    --gold-dark: 49 50% 45%;
+    --charcoal: 24 10% 10%;
+    --charcoal-light: 24 5% 35%;
+    --stone: 30 20% 97%;
+    --stone-dark: 30 15% 92%;
+
+    /* Glassmorphism */
+    --glass-bg: 40 20% 98% / 0.8;
+    --glass-border: 30 15% 90% / 0.5;
+    --glass-blur: 12px;
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(24 10% 10% / 0.08);
+    --shadow-elevated: 0 12px 40px -12px hsl(24 10% 10% / 0.12);
+    --shadow-gold: 0 4px 20px -4px hsl(49 55% 56% / 0.25);
+
+    /* Sidebar */
+    --sidebar-background: 40 20% 98%;
+    --sidebar-foreground: 24 10% 10%;
+    --sidebar-primary: 49 55% 56%;
+    --sidebar-primary-foreground: 24 10% 10%;
+    --sidebar-accent: 30 15% 94%;
+    --sidebar-accent-foreground: 24 10% 10%;
+    --sidebar-border: 30 15% 90%;
+    --sidebar-ring: 49 55% 56%;
+  }
+
+  .dark {
+    --background: 24 10% 8%;
+    --foreground: 40 20% 95%;
+
+    --card: 24 10% 12%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 24 10% 8%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 49 55% 56%;
+    --primary-foreground: 24 10% 10%;
+
+    --secondary: 24 10% 15%;
+    --secondary-foreground: 40 20% 95%;
+
+    --muted: 24 10% 15%;
+    --muted-foreground: 40 10% 60%;
+
+    --accent: 49 55% 56%;
+    --accent-foreground: 24 10% 10%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 24 10% 18%;
+    --input: 24 10% 18%;
+    --ring: 49 55% 56%;
+
+    --gold: 49 55% 56%;
+    --gold-light: 49 60% 65%;
+    --gold-dark: 49 50% 40%;
+    --charcoal: 40 20% 95%;
+    --charcoal-light: 40 10% 70%;
+    --stone: 24 10% 12%;
+    --stone-dark: 24 10% 8%;
+
+    --glass-bg: 24 10% 8% / 0.8;
+    --glass-border: 24 10% 20% / 0.5;
+
+    --sidebar-background: 24 10% 8%;
+    --sidebar-foreground: 40 20% 95%;
+    --sidebar-primary: 49 55% 56%;
+    --sidebar-primary-foreground: 24 10% 10%;
+    --sidebar-accent: 24 10% 15%;
+    --sidebar-accent-foreground: 40 20% 95%;
+    --sidebar-border: 24 10% 18%;
+    --sidebar-ring: 49 55% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  /* Glassmorphism utilities */
+  .glass {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid hsl(var(--glass-border));
+  }
+
+  /* Luxury text gradient */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, hsl(var(--gold-light)), hsl(var(--gold)), hsl(var(--gold-dark)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Elegant underline animation */
+  .underline-animation {
+    position: relative;
+  }
+
+  .underline-animation::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: hsl(var(--gold));
+    transition: width 0.3s ease;
+  }
+
+  .underline-animation:hover::after {
+    width: 100%;
+  }
+
+  /* Image hover zoom */
+  .hover-zoom {
+    overflow: hidden;
+  }
+
+  .hover-zoom img {
+    transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+  }
+
+  .hover-zoom:hover img {
+    transform: scale(1.08);
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-sans {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+}
