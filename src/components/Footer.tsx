@@ -112,7 +112,7 @@ export const Footer = () => {
         {/* Bottom */}
         <div className="mt-16 pt-8 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-background/50">
-            © 2025 AURUM. All rights reserved.
+            © 2026 Brain<span style={{ color: '#fac72d' }}>t</span>isa. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-xs text-background/50 hover:text-background transition-colors">
